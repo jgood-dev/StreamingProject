@@ -20,21 +20,19 @@ function displayData(data) {
   // console.log(data);
 }
 
-  // BASIC VERSION
-  //   const parentContainer = document.getElementById('jsonData');
-  //   const div = document.createElement('div');
-  //   div.innerHTML = JSON.stringify(data);
-  //   parentContainer.appendChild(div);
+// BASIC VERSION
+//   const parentContainer = document.getElementById('jsonData');
+//   const div = document.createElement('div');
+//   div.innerHTML = JSON.stringify(data);
+//   parentContainer.appendChild(div);
 
-  
 // const fetch = require('node-fetch');
-const apiKey = 'afnoSlmsSY5tIqJToIU0ZQr4jZGAmuivg98VKCJP'
 
-let url = `https://api.watchmode.com/v1/list-titles/?apiKey=${apiKey}&regions=US`;
+// let url = `https://api.watchmode.com/v1/changes/new_titles?apiKey=${apiKey}&types=movie,tv_series`;
 
-fetch(url, { method: 'Get' })
-    .then((res) => res.json())
-  .then((json) => {
-    displayData(json.titles[1]);
-    console.log(json['titles']);
-    });
+// fetch(url, { method: 'Get' })
+//   .then((res) => res.json())
+//   .then((json) => {
+//     displayData(json.titles[1]);
+//     console.log(json['titles']);
+//   });
