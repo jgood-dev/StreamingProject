@@ -36,3 +36,7 @@ function displayData(data) {
 //     displayData(json.titles[1]);
 //     console.log(json['titles']);
 //   });
+
+function getResults() {
+  // do API stuff and popoulate into cards
+}
