@@ -1,42 +1,51 @@
 'use strict';
 
 function displayData(data) {
-  // EASIER TO READ VERSION
-  const parentContainer = document.getElementById('jsonData');
-  // const div = document.createElement('div')
-  // const displayString = JSON.stringify(data[0]);
-  // div.innerHTML = displayString;
-  // parentContainer.appendChild(div);
+  const parentContainer = document.getElementById('mediaCards');
+  const mediaData = data['results'];
 
-  for (const key in data) {
-    const div = document.createElement('div');
-    const displayString = `${JSON.stringify(key)}: ${JSON.stringify(
-      data[key]
-    )}`;
-    div.innerHTML = displayString;
-    parentContainer.appendChild(div);
+  for (let i = 0; i < mediaData.length; i++) {
+    const currentTitle = mediaData[i];
+
+    const newCardContent = `
+    <div class="col-xl-3 col-lg-4 col-md-6">
+      <div class="card bg-dark text-light">
+          <div class="card-body text-center">
+              <div class="h1 mb-3">
+                  <img src="img/Netflix.svg" alt="Logo" class="img-fluid">
+                  <img src="${currentTitle['posterURLs']['92']}" alt="Movie Picture" class="img-fluid">
+              </div>
+              <h3 class="card-title mb-3">
+                  ${currentTitle['title']}
+              </h3>
+              <p class="card-text">
+                  <span>${currentTitle['year']}</span> <span>${currentTitle['tmdb_type']}</span>
+              </p>
+              <p class="card-text">
+                  ${currentTitle['overview']}
+              </p>
+              <a href="${currentTitle['streamingInfo']['netflix']['us']['link']}" class="btn btn-light" target="_blank">Go to site</a>
+          </div>
+      </div>
+    </div>
+  `;
+
+    parentContainer.innerHTML += newCardContent;
   }
-
-  // console.log(data);
 }
 
-// BASIC VERSION
-//   const parentContainer = document.getElementById('jsonData');
-//   const div = document.createElement('div');
-//   div.innerHTML = JSON.stringify(data);
-//   parentContainer.appendChild(div);
-
-// const fetch = require('node-fetch');
-
-// let url = `https://api.watchmode.com/v1/changes/new_titles?apiKey=${apiKey}&types=movie,tv_series`;
-
-// fetch(url, { method: 'Get' })
-//   .then((res) => res.json())
-//   .then((json) => {
-//     displayData(json.titles[1]);
-//     console.log(json['titles']);
-//   });
-
-function getResults() {
-  // do API stuff and popoulate into cards
-}
+fetch(
+  'https://streaming-availability.p.rapidapi.com/search/basic?country=us&service=netflix&type=movie&language=en',
+  {
+    method: 'GET',
+    headers: {
+      'x-rapidapi-host': 'streaming-availability.p.rapidapi.com',
+      'x-rapidapi-key': '5fe66979e9msh27f39a3bb4e6419p16dd38jsnf0085c197d1a',
+    },
+  }
+)
+  .then((res) => res.json())
+  .then((data) => {
+    console.log(data);
+    displayData(data);
+  });

@@ -42,7 +42,7 @@
     </nav>
 
     <!-- Search Bar -->
-    <section class="bg-primary text-light p-5">
+    <section class="bg-secondary text-light p-5">
         <div class="container">
             <div class="d-flex justify-content-center align-items-center">
                 <div class="input-group news-input">
@@ -54,25 +54,25 @@
         </div>
     </section>
 
-    <!-- <div id="jsonData"></div> -->
+    <div id="jsonData"></div>
 
     <!-- Cards -->
     <section class="bg-secondary p-5">
         <div class="container">
-            <div class="row text-center g-4">
+            <div class="row text-center g-4" id="mediaCards">
                 <div class="col-xl-3 col-lg-4 col-md-6">
                     <div class="card bg-dark text-light">
                         <div class="card-body text-center">
                             <div class="h1 mb-3">
                                 <img src="img/Netflix.svg" alt="Logo" class="img-fluid">
                             </div>
-                            <h3 class="card-title mb-3" id="title">
+                            <h3 class="card-title mb-3">
                                 Title
                             </h3>
                             <p class="card-text">
-                                <span id="year">1999</span> <span id="type">Movie</span>
+                                <span>1999</span> <span i>Movie</span>
                             </p>
-                            <p class="card-text" id="description">
+                            <p class="card-text">
                                 Description
                             </p>
                             <a href="#" class="btn btn-light">Go to site</a>
@@ -203,6 +203,7 @@
         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
     </script>
     <script src="script.js"></script>
+    <script src="titlesData.json"></script>
 </body>
 
 </html>
