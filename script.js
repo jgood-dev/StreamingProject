@@ -40,7 +40,7 @@ fetch(
     method: 'GET',
     headers: {
       'x-rapidapi-host': 'streaming-availability.p.rapidapi.com',
-      'x-rapidapi-key': '5fe66979e9msh27f39a3bb4e6419p16dd38jsnf0085c197d1a',
+      'x-rapidapi-key': '',
     },
   }
 )
