@@ -4,6 +4,17 @@ body::before {
   height: 60px;
 }
 
+.para-text-limit {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.logo-size {
+  width: 40%;
+}
+
 @media (min-width: 768px) {
   .news-input {
     width: 50%;
