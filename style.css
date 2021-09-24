@@ -4,6 +4,13 @@ body::before {
   height: 60px;
 }
 
+.title-text-limit {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
 .para-text-limit {
   display: -webkit-box;
   overflow: hidden;
@@ -13,6 +20,14 @@ body::before {
 
 .logo-size {
   width: 40%;
+}
+
+img {
+  max-height: 100px;
+}
+
+#rating {
+  color: yellow;
 }
 
 @media (min-width: 768px) {

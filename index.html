@@ -54,13 +54,29 @@
         </div>
     </section>
 
-    <div id="jsonData"></div>
+    <!-- <div id="jsonData"></div> -->
+
+    <!-- Sort Buttons -->
+    <section class="bg-secondary">
+        <div class="container">
+            <div class="dropdown d-flex justify-content-end">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    Sort By
+                </button>
+                <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end" aria-labelledby="dropdownMenuButton2">
+                    <li><a class="dropdown-item active" href="#">Highest Rated</a></li>
+                    <li><a class="dropdown-item" href="#">Lowest Rated</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
     <!-- Cards -->
     <section class="bg-secondary p-5">
         <div class="container">
             <div class="row text-center g-4" id="mediaCards">
-                <div class="col-xl-3 col-lg-4 col-md-6">
+                <!-- <div class="col-xl-3 col-lg-4 col-md-6">
                     <div class="card bg-dark text-light">
                         <div class="card-body text-center">
                             <div class="h1 mb-3">
@@ -142,7 +158,9 @@
                             <a href="#" class="btn btn-dark text-info">Go to site</a>
                         </div>
                     </div>
-                </div>
+                </div> -->
+
+
                 <!-- <div class="col-xl-3 col-lg-4 col-md-6">
                     <div class="card bg-dark text-light">
                         <div class="card-body text-center">
@@ -231,6 +249,14 @@
         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
     </script>
     <script src="script.js"></script>
+
+    <!-- Required for popovers to work (full description button) -->
+    <script>
+        var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+        var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+            return new bootstrap.Popover(popoverTriggerEl)
+        })
+    </script>
 </body>
 
 </html>
