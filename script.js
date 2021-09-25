@@ -1377,6 +1377,7 @@ let mergedData = [];
 function displayData(sortedData) {
   console.log(sortedData);
   const parentContainer = document.getElementById('mediaCards');
+  parentContainer.innerHTML = '';
 
   sortedData.forEach((data) => {
     const service = Object.keys(data.streamingInfo)[0];
@@ -1495,6 +1496,14 @@ function mergeData(jsonResultsArr) {
   displayData(mergedData.sort(SortByAsc('imdbRating')));
 }
 mergeData(dataList);
+
+function SortAsc(prop) {
+  displayData(mergedData.sort(SortByAsc(prop)));
+}
+
+function SortDesc(prop) {
+  displayData(mergedData.sort(SortByDesc(prop)));
+}
 
 function SortByAsc(prop) {
   return function (a, b) {

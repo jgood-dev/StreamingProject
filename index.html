@@ -65,8 +65,16 @@
                     Sort By
                 </button>
                 <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end" aria-labelledby="dropdownMenuButton2">
-                    <li><a class="dropdown-item active" href="#">Highest Rated</a></li>
-                    <li><a class="dropdown-item" href="#">Lowest Rated</a></li>
+                    <li><button class="btn dropdown-item" type="button" id='highest-rated'
+                            onclick="SortAsc('imdbRating')">Highest
+                            Rated</button></li>
+                    <li><button class="btn dropdown-item" type="button" id="lowest-rated"
+                            onclick="SortDesc('imdbRating')">Lowest
+                            Rated</button></li>
+                    <li><button class="btn dropdown-item" type="button" id="newest"
+                            onclick="SortAsc('year')">Newest</button></li>
+                    <li><button class="btn dropdown-item" type="button" id="oldest"
+                            onclick="SortDesc('year')">Oldest</button></li>
                 </ul>
             </div>
         </div>
