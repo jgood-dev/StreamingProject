@@ -1386,7 +1386,7 @@ function displayData(sortedData) {
         <div class="col-xl-3 col-lg-4 col-md-6">
           <div class="card bg-dark text-light">
               <div class="card-body text-center">
-                  <div class="h1">
+                  <div>
                       <img src="img/${service}.svg" alt="Logo" class="img-fluid logo-size">
                   </div>
                   <div class="mb-3">
@@ -1496,6 +1496,26 @@ function mergeData(jsonResultsArr) {
   displayData(mergedData.sort(SortByAsc('imdbRating')));
 }
 mergeData(dataList);
+
+function getResults() {
+  const titleToSearch = document.getElementById('titleSearch').value;
+  let resultArr = [];
+
+  // console.log(typeof mergedData[0].title[0]);
+
+  mergedData.forEach((data) => {
+    if (data.title.toLowerCase().indexOf(titleToSearch.toLowerCase()) >= 0) {
+      resultArr.push(data);
+    }
+  });
+
+  displayData(resultArr);
+}
+
+function clearResults() {
+  document.getElementById('titleSearch').value = '';
+  displayData(mergedData.sort(SortByAsc('imdbRating')));
+}
 
 function SortAsc(prop) {
   displayData(mergedData.sort(SortByAsc(prop)));

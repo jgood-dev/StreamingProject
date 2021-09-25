@@ -46,9 +46,11 @@
         <div class="container">
             <div class="d-flex justify-content-center align-items-center">
                 <div class="input-group news-input">
-                    <input type="text" class="form-control" placeholder="Search for Title">
+                    <input type="text" class="form-control" id="titleSearch" placeholder="Search for Title">
                     <button class="btn btn-dark btn-outline-light btn-lg" type="button"
                         onclick="getResults()">Search</button>
+                    <button class="btn btn-danger btn-outline-light btn-lg" type="button"
+                        onclick="clearResults()">Clear</button>
                 </div>
             </div>
         </div>
