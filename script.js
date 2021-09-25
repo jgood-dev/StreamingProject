@@ -1,5 +1,6 @@
 ('use strict');
 
+// const dataList = [];
 const dataList = [
   {
     results: [
@@ -1372,10 +1373,8 @@ const dataList = [
 
 let mergedData = [];
 
-// const dataList = [];
-
 function displayData(sortedData) {
-  console.log(sortedData);
+  // console.log(sortedData);
   const parentContainer = document.getElementById('mediaCards');
   parentContainer.innerHTML = '';
 
@@ -1482,7 +1481,6 @@ function displayData(sortedData) {
 // };
 
 // merging all API results into one
-
 function mergeData(jsonResultsArr) {
   let jsonArr = [];
 
@@ -1525,22 +1523,22 @@ function SortDesc(prop) {
   displayData(mergedData.sort(SortByDesc(prop)));
 }
 
-function SortByAsc(prop) {
+function SortByAsc(item) {
   return function (a, b) {
-    if (a[prop] < b[prop]) {
+    if (a[item] < b[item]) {
       return 1;
-    } else if (a[prop] > b[prop]) {
+    } else if (a[item] > b[item]) {
       return -1;
     }
     return 0;
   };
 }
 
-function SortByDesc(prop) {
+function SortByDesc(item) {
   return function (a, b) {
-    if (a[prop] > b[prop]) {
+    if (a[item] > b[item]) {
       return 1;
-    } else if (a[prop] < b[prop]) {
+    } else if (a[item] < b[item]) {
       return -1;
     }
     return 0;

@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
     <link rel="stylesheet" href="style.css">
-    <title>Using Fetch</title>
+    <title>Watcha Watchin</title>
 </head>
 
 <body>
@@ -19,7 +19,8 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top">
         <div class="container">
-            <a href="#" class="navbar-brand">Whatcha Watchin</a>
+            <a href="#" class="navbar-brand"><span>Whatcha Watchin</span> &nbsp;&nbsp;<sub>powered
+                    by <img src="./img/RapidAPI.svg" class="img-fluid"></sub></a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
                 <span class="navbar-toggler-icon"></span>
@@ -47,7 +48,7 @@
             <div class="d-flex justify-content-center align-items-center">
                 <div class="input-group news-input">
                     <input type="text" class="form-control" id="titleSearch" placeholder="Search for Title">
-                    <button class="btn btn-dark btn-outline-light btn-lg" type="button"
+                    <button class="btn btn-dark btn-outline-light btn-lg" id="searchBtn" type="button"
                         onclick="getResults()">Search</button>
                     <button class="btn btn-danger btn-outline-light btn-lg" type="button"
                         onclick="clearResults()">Clear</button>
@@ -251,8 +252,14 @@
         </div>
     </section>
 
-
-
+    <!-- Footer -->
+    <footer class="p-5 bg-secondary text-white text-center position-relative">
+        <div class="container">
+            <a href="#" class="bottom-0 end-0 p-5">
+                <i class="bi bi-arrow-up-circle h1 text-light"></i>
+            </a>
+        </div>
+    </footer>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
@@ -266,6 +273,17 @@
         var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
             return new bootstrap.Popover(popoverTriggerEl)
         })
+    </script>
+
+    <!-- Enter key for serach results -->
+    <script>
+        var inputText = document.getElementById("titleSearch");
+        inputText.addEventListener("keyup", (event) => {
+            if (event.keyCode === 13) {
+                event.preventDefault();
+                document.getElementById("searchBtn").click();
+            }
+        });
     </script>
 </body>
 
